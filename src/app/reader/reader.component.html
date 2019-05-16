@@ -1,0 +1,12 @@
+<mat-card>
+    <mat-form-field>
+        <textarea 
+        matInput
+        #levelOrderInfo
+        row="4"></textarea>
+    </mat-form-field>
+    <button 
+    mat-raised-button 
+    (click)="visualize(levelOrderInfo)"
+    color="primary">Visualize!</button>
+</mat-card>
