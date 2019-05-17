@@ -4,10 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm install`, then `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## How to use
-Visited www.treevisualize.com, input level order array of a tree.
+Visit www.treevisualize.com, input level order array of a tree.
 
 ## Example
 [1,null,3,4,5]
