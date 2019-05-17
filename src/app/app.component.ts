@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { HeaderComponent } from './header/header.component'
+import { Component, ViewChild } from '@angular/core';
+import { TreeComponent } from './tree/tree.component'
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,8 @@ import { HeaderComponent } from './header/header.component'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TreeVisualize';
+  @ViewChild(TreeComponent) theTree: TreeComponent;
+  sendLevelOrder(levelOrder: string) {
+    this.theTree.visualize(levelOrder);
+  }
 }

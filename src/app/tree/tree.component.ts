@@ -12,7 +12,7 @@ export class TreeComponent {
 
     innerWidth: number;
     innerHeight: number;
-    levelOrder = '[1, null, null, 1]';
+    levelOrder: string;
 
     // Initialize window information to dynamically create canvas box
     ngOnInit() {
@@ -24,7 +24,7 @@ export class TreeComponent {
     // Create canvas box that fits the screen
     resize(): void {
         let canvasRef = this.tree.nativeElement;
-        canvasRef.width = this.innerWidth * 2;
+        canvasRef.width = this.innerWidth;
         canvasRef.height = this.innerHeight;
     }
 
@@ -58,7 +58,9 @@ export class TreeComponent {
         return 50 + level * 80;
     }
 
-    visualize(): void {
+    visualize(levelOrder: string): void {
+        this.levelOrder = levelOrder;
+        this.tree.nativeElement.getContext("2d").clearRect(0, 0, this.innerWidth, this.innerHeight);
         let nodeList: string[] = this.splitStringToElements();
         if (nodeList.length === 0) {
             return;
@@ -80,7 +82,6 @@ export class TreeComponent {
                 left = left === '#' ? 'null' : left;
                 let right: string | null = index + 1 < nodeList.length ? nodeList[index + 1] : null;
                 right = right !== null && right === '#' ? 'null' : right;
-                console.log(parent);
                 if (parent === 'null') {
                     valueQueue.push('null');
                     valueQueue.push('null');

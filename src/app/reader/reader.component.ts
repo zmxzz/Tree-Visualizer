@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: '<app-reader>',
@@ -6,10 +6,15 @@ import { Component } from '@angular/core';
     styleUrls: ['./reader.component.css']
 })
 export class ReaderComponent {
-    levelOrder = '';
+    @Output() levelOrderRead = new EventEmitter();
 
-    visualize(levelOrderInfo: HTMLTextAreaElement) {
-        this.levelOrder = levelOrderInfo.value;
+    levelOrder: string = '[1,null,3,4,5]';
+
+    visualize() {
+        if (this.levelOrder.length === 0) {
+            return;
+        }
+        this.levelOrderRead.emit(this.levelOrder);
     }
 
 }

@@ -1,2 +1,1 @@
-<canvas #tree></canvas>
-<button (click)="visualize()">Draw</button>
+<canvas #tree (levelOrderRead)="visualize($event)"></canvas>

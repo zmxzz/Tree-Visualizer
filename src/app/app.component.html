@@ -1,5 +1,5 @@
 <app-header></app-header>
 <main>
-    <app-reader></app-reader>
+    <app-reader (levelOrderRead)="sendLevelOrder($event)"></app-reader>
 </main>
 <app-tree></app-tree>

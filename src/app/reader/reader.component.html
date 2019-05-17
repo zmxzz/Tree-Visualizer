@@ -2,11 +2,10 @@
     <mat-form-field>
         <textarea 
         matInput
-        #levelOrderInfo
+        [(ngModel)]="levelOrder"
         row="4"></textarea>
     </mat-form-field>
     <button 
     mat-raised-button 
-    (click)="visualize(levelOrderInfo)"
-    color="primary">Visualize!</button>
+    (click)="visualize()">Visualize!</button>
 </mat-card>
